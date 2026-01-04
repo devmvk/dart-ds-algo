@@ -32,8 +32,8 @@ int threeSumSmaller(List<int> nums, int target) {
     while (left < right) {
       int sum = nums[i] + nums[left] + nums[right];
       if (sum < target) {
+        count += (right - left);
         left++;
-        count++;
       } else {
         right--;
       }
