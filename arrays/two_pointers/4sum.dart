@@ -1,3 +1,15 @@
+/* Concept: 
+// 1. Deduplication (Keep this)
+  if (i > 0 && nums[i] == nums[i - 1]) continue;
+
+  Pruning Conditions:
+  // 2. "Too Large" - Smallest possible sum with this 'i' is already too big
+  if (BigInt.from(nums[i] + nums[i+1] + nums[i+2] + nums[i+3]) > BigInt.from(target)) break;
+
+  // 3. "Too Small" - Largest possible sum with this 'i' is still too small
+  if (BigInt.from(nums[i] + nums[length-3] + nums[length-2] + nums[length-1]) < BigInt.from(target)) continue;
+*/
+
 List<List<int>> fourSum(List<int> nums, int target) {
   nums.sort();
   List<List<int>> result = [];
